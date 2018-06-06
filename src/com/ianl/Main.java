@@ -21,12 +21,12 @@ public class Main {
         // if the count is 3, break the loop
         // use break; to exit loop
 
-        for (int i = 0; i < 33; i++) {
+        for (int i = 1; i < 99; i++) {
             if(isPrime(i)) {
                 System.out.println(i+" is a Prime number");
                 primeNumbers++;
-                if (primeNumbers == 3) {
-                    System.out.println("Found 3 Prime numbers, breaking loop");
+                if (primeNumbers == 10) {
+                    System.out.println("Found " + primeNumbers + " Prime numbers, breaking loop");
                     primeNumbers = 0;
                     break;
                 }
@@ -44,7 +44,7 @@ public class Main {
         if (n != 1) {
             //for loop that checks if there are any numbers less than half of the par that can
             //divide into the par and return a 0 value
-            for (int i = 2; i <= n/2; i++) {
+            for (int i = 2; i <= (long) Math.sqrt(n); i++) {
                 if ( n % i == 0 ) {
                     //if there's a divisible number then method returns false
                     return false;
