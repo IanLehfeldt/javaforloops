@@ -14,21 +14,22 @@ public class Main {
 //        for (int i = 8; i >= 2; i--) {
 //            System.out.println("10,000 @ " + i + "% interest rate = " + String.format("%.2f",calculateInterest(10000.0, i)));
 //        }
+
         // Create a for statement using any range of numbers
         // Determine if number is prime using the is prime method
         // if prime, print number and increment count of number of prime numbers found
         // if the count is 3, break the loop
         // use break; to exit loop
 
-        for (int i = 20; i < 33; i++) {
-            if (primeNumbers == 3) {
-                System.out.println("Found 3 Prime numbers, breaking loop");
-                primeNumbers = 0;
-                break;
-            }
+        for (int i = 0; i < 33; i++) {
             if(isPrime(i)) {
                 System.out.println(i+" is a Prime number");
                 primeNumbers++;
+                if (primeNumbers == 3) {
+                    System.out.println("Found 3 Prime numbers, breaking loop");
+                    primeNumbers = 0;
+                    break;
+                }
             }
         }
 
@@ -39,12 +40,17 @@ public class Main {
     }
 
     public static boolean isPrime(int n) {
+        //if number isn't 1 then..
         if (n != 1) {
+            //for loop that checks if there are any numbers less than half of the par that can
+            //divide into the par and return a 0 value
             for (int i = 2; i <= n/2; i++) {
                 if ( n % i == 0 ) {
+                    //if there's a divisible number then method returns false
                     return false;
                 }
             }
+            //else, return true
             return true;
         }
         return false;
